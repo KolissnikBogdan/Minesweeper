@@ -1,0 +1,86 @@
+body {
+    background: url("../image/background.jpg") no-repeat center fixed;
+    background-size: 100% 100%;
+}
+
+.gameContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto 0;
+    opacity: .8;
+}
+
+.gameContainer td, .lock td, .bomb-blast td {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+}
+
+.gameContainer td:not(.lock):not(.bomb-blast):not(.open-cell) {
+    background: green;
+}
+
+.no-event {
+    pointer-events: none;
+}
+
+.lock {
+    background: sandybrown;
+}
+
+.lock:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    background: url("../image/flag.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.bomb-blast {
+    background: red;
+}
+
+.bomb-blast:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 auto;
+    background: url("../image/mine.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.open-cell {
+    background: aqua;
+    text-align: center;
+    font-weight: bold;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    background: #333333;
+    font-size: 20px;
+    color: #eeeeee;
+    box-shadow: 0 -1px rgba(0, 0, 0, .5) inset;
+}
+
+#menu > li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 18px 0 12px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+#menu > li:hover {
+    background: rgba(0, 0, 0, .3);
+}
